@@ -6,7 +6,6 @@ public class Angajat {
 
     public Angajat(String nume) {
         this.nume = nume;
-        this.pozitie = pozitie;
     }
 
     public String getNume() {

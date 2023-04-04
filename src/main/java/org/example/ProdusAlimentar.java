@@ -6,7 +6,7 @@ public class ProdusAlimentar extends Produs {
     private Date dataExpirare;
     private String taraOrigine;
 
-    public ProdusAlimentar(String nume, int cod, String categorie, int cantitate, double pret,  Date dataExpirare, String taraOrigine) {
+    public ProdusAlimentar(String nume, int cod, CategorieProduse categorie, int cantitate, double pret,  Date dataExpirare, String taraOrigine) {
         super(nume, cod, categorie, cantitate, pret);
         this.dataExpirare = dataExpirare;
         this.taraOrigine = taraOrigine;
