@@ -2,11 +2,14 @@ package org.example;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Magazin {
     private String nume;
     private ArrayList<CategorieProduse> categoriiProduse;
+    private ArrayList<Produs> listaProduse;
     private ArrayList<Distribuitor> distribuitori;
     private ArrayList<Angajat> angajati;
     private ArrayList<Comanda> comenzi;
@@ -14,6 +17,7 @@ public class Magazin {
 
     public Magazin(String nume) {
         this.nume = nume;
+        listaProduse= new ArrayList<Produs>();
         categoriiProduse = new ArrayList<CategorieProduse>();
         distribuitori = new ArrayList<Distribuitor>();
         angajati = new ArrayList<Angajat>();
@@ -47,6 +51,10 @@ public class Magazin {
 
     public void adaugaCategorieProduse(CategorieProduse categorieProduse) {
         categoriiProduse.add(categorieProduse);
+    }
+
+    public void adaugaProdus(Produs produs) {
+        listaProduse.add(produs);
     }
 
     public void stergeCategorieProduse(CategorieProduse categorieProduse) {
@@ -84,6 +92,48 @@ public class Magazin {
     public void stergeFactura(Factura factura) {
         facturi.remove(factura);
     }
+    public Comanda cautaComandaDupaId(Integer id) {
+        return this.comenzi.get(id);
+    }
+
+    public ArrayList<Produs> cautareProdusePretMaiMicDecat(double pret) {
+        ArrayList<Produs> produse = new ArrayList<>();
+        for (Produs produs : listaProduse) {
+            if (produs.getPret() < pret) {
+                produse.add(produs);
+            }
+        }
+        return produse;
+    }
+
+    public double calculeazaValoareStoc() {
+        double valoareStoc = 0;
+        for (Produs produs : listaProduse) {
+            valoareStoc += produs.getPret() * produs.getCantitate();
+        }
+        return valoareStoc;
+    }
+    public ArrayList<Produs> cautareProduseDinCategorie(CategorieProduse categorie) {
+        ArrayList<Produs> produse = new ArrayList<>();
+        for (Produs produs : listaProduse) {
+            if (produs.getCategorie() == categorie) {
+                produse.add(produs);
+            }
+        }
+        return produse;
+    }
+    public List<Produs> getProduseInStoc() {
+        List<Produs> produseInStoc = new ArrayList<>();
+        for (Produs produs : listaProduse) {
+            if (produs.getCantitate() > 0) {
+                produseInStoc.add(produs);
+            }
+        }
+        return produseInStoc;
+    }
+
+
+
 
 
 }
