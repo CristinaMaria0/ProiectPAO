@@ -9,10 +9,9 @@ public class Factura {
     private String dataEmitere;
 
     // Constructor
-    public Factura(int numarFactura, ArrayList<Produs> produse, double valoare, String dataEmitere) {
+    public Factura(int numarFactura, ArrayList<Produs> produse, String dataEmitere) {
         this.numarFactura = numarFactura;
         this.produse = produse;
-        this.valoare = valoare;
         this.dataEmitere = dataEmitere;
     }
 
@@ -24,7 +23,10 @@ public class Factura {
     public ArrayList<Produs> getProduse() {
         return produse;
     }
-
+    public String getProduseString(){
+        String rezultat = produse.toString();
+        return  rezultat;
+    }
     public double getValoare() {
         return valoare;
     }
@@ -33,8 +35,14 @@ public class Factura {
         return dataEmitere;
     }
 
-    public void setValoare(double valoare) {
-        this.valoare = valoare;
+    public double calculTotal(ArrayList<Produs> produse){
+        double total=0;
+        for(Produs produs : produse){
+            total=total+produs.getPret();
+        }
+        return  total;
     }
-
+    public void setValoare(double valoare){
+        this.valoare=valoare;
+    }
 }

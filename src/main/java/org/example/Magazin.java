@@ -8,132 +8,34 @@ import java.util.List;
 
 public class Magazin {
     private String nume;
-    private ArrayList<CategorieProduse> categoriiProduse;
+    private String adresa;
+    private String proprietar;
     private ArrayList<Produs> listaProduse;
-    private ArrayList<Distribuitor> distribuitori;
-    private ArrayList<Angajat> angajati;
-    private ArrayList<Comanda> comenzi;
-    private ArrayList<Factura> facturi;
-
-    public Magazin(String nume) {
-        this.nume = nume;
-        listaProduse= new ArrayList<Produs>();
-        categoriiProduse = new ArrayList<CategorieProduse>();
-        distribuitori = new ArrayList<Distribuitor>();
-        angajati = new ArrayList<Angajat>();
-        comenzi = new ArrayList<Comanda>();
-        facturi = new ArrayList<Factura>();
+    public Magazin(String nume, String adresa, String proprietar){
+        this.nume=nume;
+        this.adresa=adresa;
+        this.listaProduse=new ArrayList<>();
+        this.proprietar=proprietar;
     }
-
     public String getNume() {
         return nume;
     }
+    public String getAdresa(){return adresa;}
+    public String getProprietar(){return proprietar;}
 
-    public ArrayList<CategorieProduse> getCategoriiProduse() {
-        return categoriiProduse;
-    }
-
-    public ArrayList<Distribuitor> getDistribuitori() {
-        return distribuitori;
-    }
-
-    public ArrayList<Angajat> getAngajati() {
-        return angajati;
-    }
-
-    public ArrayList<Comanda> getComenzi() {
-        return comenzi;
-    }
-
-    public ArrayList<Factura> getFacturi() {
-        return facturi;
-    }
-
-    public void adaugaCategorieProduse(CategorieProduse categorieProduse) {
-        categoriiProduse.add(categorieProduse);
-    }
-
+    public ArrayList<Produs> getProduse(){ return listaProduse;}
     public void adaugaProdus(Produs produs) {
         listaProduse.add(produs);
     }
 
-    public void stergeCategorieProduse(CategorieProduse categorieProduse) {
-        categoriiProduse.remove(categorieProduse);
+    @Override
+    public String toString() {
+        return "Magazin{" +
+                "nume='" + nume + '\'' +
+                ", adresa='" + adresa + '\'' +
+                ", proprietar=" + proprietar +
+                '}';
     }
-
-    public void adaugaDistribuitor(Distribuitor distribuitor) {
-        distribuitori.add(distribuitor);
-    }
-
-    public void stergeDistribuitor(Distribuitor distribuitor) {
-        distribuitori.remove(distribuitor);
-    }
-
-    public void adaugaAngajat(Angajat angajat) {
-        angajati.add(angajat);
-    }
-
-    public void stergeAngajat(Angajat angajat) {
-        angajati.remove(angajat);
-    }
-
-    public void adaugaComanda(Comanda comanda) {
-        comenzi.add(comanda);
-    }
-
-    public void stergeComanda(Comanda comanda) {
-        comenzi.remove(comanda);
-    }
-
-    public void adaugaFactura(Factura factura) {
-        facturi.add(factura);
-    }
-
-    public void stergeFactura(Factura factura) {
-        facturi.remove(factura);
-    }
-    public Comanda cautaComandaDupaId(Integer id) {
-        return this.comenzi.get(id);
-    }
-
-    public ArrayList<Produs> cautareProdusePretMaiMicDecat(double pret) {
-        ArrayList<Produs> produse = new ArrayList<>();
-        for (Produs produs : listaProduse) {
-            if (produs.getPret() < pret) {
-                produse.add(produs);
-            }
-        }
-        return produse;
-    }
-
-    public double calculeazaValoareStoc() {
-        double valoareStoc = 0;
-        for (Produs produs : listaProduse) {
-            valoareStoc += produs.getPret() * produs.getCantitate();
-        }
-        return valoareStoc;
-    }
-    public ArrayList<Produs> cautareProduseDinCategorie(CategorieProduse categorie) {
-        ArrayList<Produs> produse = new ArrayList<>();
-        for (Produs produs : listaProduse) {
-            if (produs.getCategorie() == categorie) {
-                produse.add(produs);
-            }
-        }
-        return produse;
-    }
-    public List<Produs> getProduseInStoc() {
-        List<Produs> produseInStoc = new ArrayList<>();
-        for (Produs produs : listaProduse) {
-            if (produs.getCantitate() > 0) {
-                produseInStoc.add(produs);
-            }
-        }
-        return produseInStoc;
-    }
-
-
-
 
 
 }

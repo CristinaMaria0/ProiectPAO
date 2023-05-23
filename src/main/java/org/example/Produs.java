@@ -3,11 +3,11 @@ package org.example;
 public class Produs {
     private String nume;
     private int cod;
-    private CategorieProduse categorie;
+    private String categorie;
     private int cantitate;
     private double pret;
 
-    public Produs(String nume, int cod, CategorieProduse categorie, int cantitate, double pret) {
+    public Produs(String nume, int cod, String categorie, int cantitate, double pret) {
         this.nume = nume;
         this.cod = cod;
         this.categorie = categorie;
@@ -25,7 +25,7 @@ public class Produs {
         return cod;
     }
 
-    public CategorieProduse getCategorie() {
+    public String getCategorie() {
         return categorie;
     }
 
