@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd42a152-4f0b-41e4-a02f-c0b9bcd8232e" name="Changes" comment="Work on clasa serviciu">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f130457-46c3-4396-b337-7a4874a304f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f130457-46c3-4396-b337-7a4874a304f6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Angajat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Angajat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Produs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Produs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ServiciuMagazin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ServiciuMagazin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Sofer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Sofer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,7 @@
       <workItem from="1680634881198" duration="162000" />
       <workItem from="1684766175273" duration="3040000" />
       <workItem from="1684789464786" duration="6657000" />
-      <workItem from="1684827585332" duration="22340000" />
+      <workItem from="1684827585332" duration="22974000" />
     </task>
     <task id="LOCAL-00001" summary="Clase">
       <created>1680621294580</created>
