@@ -1058,58 +1058,48 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="304" parent="297" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="305" parent="297" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="306" parent="298" name="nume">
+    <column id="304" parent="298" name="nume">
       <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="307" parent="298" name="adresa">
+    <column id="305" parent="298" name="adresa">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="308" parent="299" name="numarFactura">
+    <column id="306" parent="299" name="numarFactura">
       <DasType>int|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="309" parent="299" name="produse">
+    <column id="307" parent="299" name="produse">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="310" parent="299" name="valoare">
+    <column id="308" parent="299" name="valoare">
       <DasType>double|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="311" parent="299" name="dataEmitere">
+    <column id="309" parent="299" name="dataEmitere">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="312" parent="300" name="nume">
+    <column id="310" parent="300" name="nume">
       <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="313" parent="300" name="cod">
+    <column id="311" parent="300" name="cod">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="314" parent="300" name="categorie">
+    <column id="312" parent="300" name="categorie">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="315" parent="300" name="cantitate">
+    <column id="313" parent="300" name="cantitate">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="316" parent="300" name="pret">
+    <column id="314" parent="300" name="pret">
       <DasType>double|0s</DasType>
       <Position>5</Position>
     </column>

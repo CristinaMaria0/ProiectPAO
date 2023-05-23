@@ -8,8 +8,9 @@ public class Sofer extends Angajat{
     private String masina;
     private List<Comanda> comenziS;
     private String nrTelefon;
-    public Sofer(String masina, String nrTelefon, int id, String nume, String pozitie) {
-        super(id, nume, pozitie);
+    public Sofer(String masina, String nrTelefon, int id, String nume) {
+        super(id, nume);
+        this.setPozitie("sofer");
         this.masina=masina;
         this.nrTelefon=nrTelefon;
     }

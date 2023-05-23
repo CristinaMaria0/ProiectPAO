@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ServiciuMagazin {
     private ArrayList<Distribuitor> listaDistribuitori;
@@ -39,38 +36,31 @@ public class ServiciuMagazin {
 
         listaAngajati.add(angajat);
     }
+    public void adaugaSofer(Sofer sofer) {
 
-    public Angajat readAngajat(int id) {
+        listaSoferi.add(sofer);
+    }
+
+    public String readAngajat(int id) {
         for (Angajat angajat : listaAngajati) {
             if (angajat.getId() == id) {
-                return angajat;
+                return angajat.toString();
             }
         }
         return null;
     }
-    public ArrayList<Angajat> getAngajati(){
-        return listaAngajati;
+    public String getAngajati(){
+        return listaAngajati.toString();
     }
     public void adaugaComanda(Comanda comanda) {
 
         listaComenzi.add(comanda);
     }
 
-    public void stergeComanda(Comanda comanda) {
-
-        listaComenzi.remove(comanda);
-    }
-
     public void adaugaFactura(Factura factura) {
 
         listaFacturi.add(factura);
     }
-
-    public void stergeFactura(Factura factura) {
-
-        listaFacturi.remove(factura);
-    }
-
 
     //1. Cauta comanda dupa id
     public Comanda cautaComandaDupaId(int id) {
@@ -108,9 +98,8 @@ public class ServiciuMagazin {
     public ArrayList<Produs> cautareProduseDinCategorie(String categorie) {
         ArrayList<Produs> produse = new ArrayList<>();
         ArrayList<Produs> produseMagazin= Magazin.getProduse();
-
         for (Produs produs : produseMagazin) {
-            if (produs.getCategorie() == categorie) {
+            if (Objects.equals(produs.getCategorie(), categorie)) {
                 produse.add(produs);
             }
         }
@@ -128,20 +117,6 @@ public class ServiciuMagazin {
             }
         }
         return produseInStoc;
-    }
-    //6. Afiseaza soferii cu cele mai multe comenzi
-    public ArrayList<Sofer> SoferiCuCeleMaiMulteComenzi() {
-        List<Sofer> soferiSortati = new ArrayList<>(listaSoferi);
-        soferiSortati.sort(Comparator.comparingInt(sofer -> sofer.getComenzi().size()));
-        Collections.reverse(soferiSortati);
-
-        //daca sunt mai multi soferi cu nr maxim de comenzi
-        ArrayList<Sofer> SoferiMax= new ArrayList<>();
-
-        for (int i = 0; i < soferiSortati.size(); i++) {
-            SoferiMax.add(soferiSortati.get(i));
-        }
-        return SoferiMax;
     }
 
 

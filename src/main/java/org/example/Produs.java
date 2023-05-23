@@ -33,17 +33,10 @@ public class Produs {
         return cantitate;
     }
 
-    public void setCantitate(int cantitate) {
-        this.cantitate = cantitate;
-    }
-
     public double getPret() {
         return pret;
     }
 
-    public void setPret(double pret) {
-        this.pret = pret;
-    }
 
     @Override
     public String toString() {

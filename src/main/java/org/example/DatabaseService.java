@@ -1,20 +1,21 @@
 package org.example;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseService {
     private static Connection connection;
     private static DatabaseService instance;
-    private DatabaseService () {
+    DatabaseService() {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/myshop", "root", "mysql");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/myshop", "root", "mysql");
             System.out.println(connection);
         }
         catch (Exception e){
 
         }
     }
-    public static synchronized DatabaseService getInstance() {
+    public static DatabaseService getInstance() {
         if (instance == null) {
             instance = new DatabaseService();
         }
@@ -49,7 +50,24 @@ public class DatabaseService {
         }
         return null;
     }
-
+    public ArrayList<Angajat> readAngajati() {
+        ArrayList<Angajat> angajati = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM angajat ";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int id=resultSet.getInt("id");
+                String nume = resultSet.getString("nume");
+                String pozitie = resultSet.getString("pozitie");
+                Angajat angajat = new Angajat(id, nume, pozitie);
+                angajati.add(angajat);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return angajati;
+    }
     public void updateAngajat(Angajat angajat) {
         try {
             String query = "UPDATE angajat SET nume = ?, pozitie = ? WHERE id = ?";
