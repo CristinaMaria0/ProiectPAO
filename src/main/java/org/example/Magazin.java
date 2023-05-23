@@ -10,7 +10,7 @@ public class Magazin {
     private String nume;
     private String adresa;
     private String proprietar;
-    private ArrayList<Produs> listaProduse;
+    private static ArrayList<Produs> listaProduse;
     public Magazin(String nume, String adresa, String proprietar){
         this.nume=nume;
         this.adresa=adresa;
@@ -23,7 +23,7 @@ public class Magazin {
     public String getAdresa(){return adresa;}
     public String getProprietar(){return proprietar;}
 
-    public ArrayList<Produs> getProduse(){ return listaProduse;}
+    public static ArrayList<Produs> getProduse(){ return listaProduse;}
     public void adaugaProdus(Produs produs) {
         listaProduse.add(produs);
     }

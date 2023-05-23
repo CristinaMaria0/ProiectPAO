@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd42a152-4f0b-41e4-a02f-c0b9bcd8232e" name="Changes" comment="Work on clasa serviciu">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DatabaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ServiciuMagazin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Sofer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Angajat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Angajat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CategorieProduse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Distribuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Distribuitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Comanda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Magazin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Magazin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Produs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Produs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProdusAlimentar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProdusAlimentar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ServiciuMagazin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ServiciuMagazin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +105,7 @@
       <workItem from="1680634881198" duration="162000" />
       <workItem from="1684766175273" duration="3040000" />
       <workItem from="1684789464786" duration="6657000" />
-      <workItem from="1684827585332" duration="11991000" />
+      <workItem from="1684827585332" duration="15021000" />
     </task>
     <task id="LOCAL-00001" summary="Clase">
       <created>1680621294580</created>

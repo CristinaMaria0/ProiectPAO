@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ServiciuMagazin {
@@ -38,11 +40,17 @@ public class ServiciuMagazin {
         listaAngajati.add(angajat);
     }
 
-    public void stergeAngajat(Angajat angajat) {
-
-        listaAngajati.remove(angajat);
+    public Angajat readAngajat(int id) {
+        for (Angajat angajat : listaAngajati) {
+            if (angajat.getId() == id) {
+                return angajat;
+            }
+        }
+        return null;
     }
-
+    public ArrayList<Angajat> getAngajati(){
+        return listaAngajati;
+    }
     public void adaugaComanda(Comanda comanda) {
 
         listaComenzi.add(comanda);
@@ -62,18 +70,23 @@ public class ServiciuMagazin {
 
         listaFacturi.remove(factura);
     }
-/*
+
 
     //1. Cauta comanda dupa id
-    public Comanda cautaComandaDupaId(Integer id) {
-
-        return this.comenzi.get(id);
+    public Comanda cautaComandaDupaId(int id) {
+        for (Comanda comanda : listaComenzi) {
+            if (comanda.getId() == id) {
+                return comanda;
+            }
+        }
+        return  null;
     }
 
     //2. Cauta produsele cu un pret mai mic decat un numar dat
     public ArrayList<Produs> cautareProdusePretMaiMicDecat(double pret) {
         ArrayList<Produs> produse = new ArrayList<>();
-        for (Produs produs : listaProduse) {
+        ArrayList<Produs> produseMagazin= Magazin.getProduse();
+        for (Produs produs : produseMagazin) {
             if (produs.getPret() < pret) {
                 produse.add(produs);
             }
@@ -84,7 +97,8 @@ public class ServiciuMagazin {
     //3. Calculeaza valoarea totala a stocului
     public double calculeazaValoareStoc() {
         double valoareStoc = 0;
-        for (Produs produs : listaProduse) {
+        ArrayList<Produs> produseMagazin= Magazin.getProduse();
+        for (Produs produs : produseMagazin) {
             valoareStoc += produs.getPret() * produs.getCantitate();
         }
         return valoareStoc;
@@ -93,7 +107,9 @@ public class ServiciuMagazin {
     //4. Cautarea produselor dintr-o anumita categorie
     public ArrayList<Produs> cautareProduseDinCategorie(String categorie) {
         ArrayList<Produs> produse = new ArrayList<>();
-        for (Produs produs : listaProduse) {
+        ArrayList<Produs> produseMagazin= Magazin.getProduse();
+
+        for (Produs produs : produseMagazin) {
             if (produs.getCategorie() == categorie) {
                 produse.add(produs);
             }
@@ -104,15 +120,30 @@ public class ServiciuMagazin {
     //5. Returneaza produsele care se afla in stoc
     public List<Produs> getProduseInStoc() {
         List<Produs> produseInStoc = new ArrayList<>();
-        for (Produs produs : listaProduse) {
+        ArrayList<Produs> produseMagazin= Magazin.getProduse();
+
+        for (Produs produs : produseMagazin) {
             if (produs.getCantitate() > 0) {
                 produseInStoc.add(produs);
             }
         }
         return produseInStoc;
     }
+    //6. Afiseaza soferii cu cele mai multe comenzi
+    public ArrayList<Sofer> SoferiCuCeleMaiMulteComenzi() {
+        List<Sofer> soferiSortati = new ArrayList<>(listaSoferi);
+        soferiSortati.sort(Comparator.comparingInt(sofer -> sofer.getComenzi().size()));
+        Collections.reverse(soferiSortati);
+
+        //daca sunt mai multi soferi cu nr maxim de comenzi
+        ArrayList<Sofer> SoferiMax= new ArrayList<>();
+
+        for (int i = 0; i < soferiSortati.size(); i++) {
+            SoferiMax.add(soferiSortati.get(i));
+        }
+        return SoferiMax;
+    }
 
 
 
- */
 }
