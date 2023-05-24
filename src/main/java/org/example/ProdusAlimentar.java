@@ -12,6 +12,7 @@ public class ProdusAlimentar extends Produs {
         this.taraOrigine = taraOrigine;
     }
 
+
     public Date getDataExpirare() {
         return dataExpirare;
     }

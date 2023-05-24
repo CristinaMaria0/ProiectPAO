@@ -80,7 +80,16 @@ public class DatabaseService {
             e.printStackTrace();
         }
     }
-
+    public void deleteAngajat(int id) {
+        try {
+            String query = "DELETE FROM angajat WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void insertDistribuitor(Distribuitor distribuitor) {
         try {

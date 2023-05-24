@@ -48,9 +48,6 @@ public class Main {
         Angajat angajat1 = new Angajat(1, "Popescu Ion", "pozitie 1");
         Angajat angajat2 = new Angajat(2, "Ionescu Maria", "pozitie 2");
 
-        Dservice.insertAngajat(angajat1);
-        Dservice.insertAngajat(angajat2);
-
         // Creare comenzi
         ArrayList<Produs> produse_comanda1 = new ArrayList<>();
         produse_comanda1.add(produs1);
@@ -85,8 +82,9 @@ public class Main {
             System.out.println("6. Cautarea produselor dintr-o anumita categorie");
             System.out.println("7. Returneaza produsele care se afla in stoc");
             System.out.println("8. Cauta o comanda dupa ID");
+            System.out.println("9. Sterge angajat");
 
-            System.out.println("9. Exit");
+            System.out.println("10. Exit");
             System.out.print("Opțiune: ");
 
             int optiune = scanner.nextInt();
@@ -127,6 +125,7 @@ public class Main {
                           System.out.println("Nu s-a găsit niciun angajat cu ID-ul specificat.");
                       }
 
+
                     break;
                 case 4:
                     AuditService.logAction("Cauta produsele cu un pret mai mic decat un numar dat");
@@ -161,6 +160,14 @@ public class Main {
                     System.out.println(serviciu.cautaComandaDupaId(comanda1.getId()));
                     break;
                 case 9:
+                    AuditService.logAction("sterge un angajat");
+
+                    System.out.print("Introdu ID-ul angajatului: ");
+                    int id_ang = scanner.nextInt();
+                    Dservice.deleteAngajat(id_ang);
+                    System.out.println("sters");
+                    break;
+                case 10:
                     continua = false;
                     break;
                 default:
@@ -172,7 +179,7 @@ public class Main {
         }
 
         scanner.close();
-
+        Dservice.closeConnection();
     }
 
 }
